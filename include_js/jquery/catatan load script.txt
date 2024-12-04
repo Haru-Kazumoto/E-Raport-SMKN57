@@ -1,0 +1,7 @@
+jQuery.getScript("/path/to/myscript.js", function(data, status, jqxhr) {
+
+	/* 
+		do something now that the script is loaded and code has been executed
+	*/	
+
+});

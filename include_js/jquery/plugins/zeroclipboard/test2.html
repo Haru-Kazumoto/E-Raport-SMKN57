@@ -1,0 +1,38 @@
+<textarea ID="wcopy1" >Copy To Clipboard press below button to copy this content</textarea>
+<textarea ID="wcopy2" >Copy To Clipboard press below button to copy this content</textarea>
+<input type=button id='copy-button' name=n1   value='copy'>
+
+
+<input type=button name=copy  value='isi1'>
+<input type=button name=copy  value='isi2'>
+<a href=#  name=copy  alt='isinya 1'>copy</a>
+<a href=# name=copy  alt='isinya 2'>copy</a>
+ 
+
+ 
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="jquery.zclip.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+								
+		idcku='#wcopy1';
+		$('#copy-button').zclip({
+            copy: function () { return $(idcku).val(); },
+			afterCopy: function () {alert('Copyed:' + $(idcku).val());}
+        });
+		
+		$('input[name="copy"]').zclip({
+            copy: function () { return $(this).val(); },
+			afterCopy: function () {alert('Copyed:' + $(this).val());}
+        });
+		$('a[name="copy"]').zclip({
+            copy: function () { return $(this).attr("alt"); } 
+        });
+		
+		
+		
+	});
+	
+	
+	
+</script>

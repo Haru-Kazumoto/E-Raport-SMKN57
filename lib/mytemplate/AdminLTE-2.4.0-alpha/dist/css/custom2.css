@@ -1,0 +1,126 @@
+.login-box, .register-box,
+.login-err,
+.login-error {
+	max-width: 330px;
+	width:100%;
+	
+}
+.form-control-feedback {
+	margin-top:8px;
+}
+.login-error {
+	
+ 
+
+}
+
+.login-box, .register-box {
+    
+    margin: 3% auto;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+	background:url(../img/bg-login.jpg) #FFF;
+
+}
+
+.login-box-body { 
+	position: relative;
+	padding: 20px;
+	max-width: 500px;
+	width:100%;
+	margin: auto;
+}
+
+
+body ,
+#wrapper, .wrapper {
+	overflow-y: hidden;
+	
+}
+body {
+	font-family: Calibri,Arial,sans-serif;
+}
+
+.ui-dialog {
+	z-index:10000;
+}
+
+/* form input*/
+input, select  {
+	width:auto;
+    border-radius: 0px;
+    box-shadow: none;
+    border-color: #D2D6DE;
+    
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #CCC;
+    
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+
+}
+
+input[type="file"] {
+    display: inline;
+}
+
+.dl{
+	margin:5px 0px;
+}
+.dt {
+	float:left;
+	width:200px;
+}
+
+
+input, select {
+    padding:3px;
+  }
+  
+.imgpil {
+ max-width:95%;
+ max-height:80%;
+}
+
+.btn-sm {
+	height: 28px;	
+	margin-top: -4px;
+	min-width: 50px;
+}
+
+.custom-combobox-input {
+    width: 92%;
+}
+
+.content-wrapper, .right-side, .main-footer {
+    transition: transform 0.3s ease-in-out 0s, margin 0.3s ease-in-out 0s;
+    margin-left: 0px;
+    z-index: 820;
+}
+
+ 
+ @media (max-width: 767px) {
+
+	.main-sidebar, 
+	.left-side {
+ 
+		margin-top: 60px !important;
+	}
+	.info-utp,
+	.info-uid {
+		display:none !important;
+	}
+	.wrapper {
+		width:100%;
+	}
+	#tgantifont{
+		display:none;
+	}
+	footer {
+		position:relative !important;
+		margint-top:0px !important;
+	}
+}

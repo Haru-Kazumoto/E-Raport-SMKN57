@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+
+    <title>Magnific Popup Documentation</title>
+    
+    <meta charset="utf-8"> 
+    <meta name="description" content="The complete guide on how to use Magnific Popup - the open source responsive lightbox plugin.">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta name="author" content="Dmitry Semenov">
+    <link rel="canonical" href="http://dimsemenov.com/plugins/magnific-popup/documentation.html">
+
+    <meta property="og:url" content="http://dimsemenov.com/plugins/magnific-popup/documentation.html">
+    <meta property="og:title" content="Magnific Popup Documentation">
+    <meta property="og:description" content="The complete guide on how to use Magnific Popup - the open source responsive lightbox plugin.">
+    <meta property="og:image" content="http://dimsemenov.com/magnific-og-400x400.jpg">
+
+    <link href="https://plus.google.com/102586375605352607718" rel="publisher">
+
+    
+      <link href="Magnific%20Popup%20Documentation_files/all.css" rel="stylesheet">
+    
+
+
+    
+    <style type="text/css"> #main-wrapper{background: #FFF;} </style>
+    
+
+  </head>
+
+  <body>
+    
+  <div id="main-wrapper">
+
+    <div id="documentation-intro">
+  <h1><a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup</a> Documentation</h1>
+  <p><a href="https://github.com/dimsemenov/Magnific-Popup/">Project on GitHub</a> · <a href="#mfp-build-tool" class="mfp-build-tool-link">Build tool</a> · <a href="http://twitter.com/dimsemenov">Twitter of developer</a> · <a href="http://dimsemenov.com/subscribe.html">Newsletter of developer</a></p>
+</div>
+
+<!-- DOCUMENTATION START -->
+
+<p>Here you can find the guide on how to use Magnific Popup. Besides this docs page, you can <a href="http://codepen.io/collection/nLcqo">play with examples on CodePen</a>. If you’ve found any mistake in this site or you know how to improve some part of this documentation - please <a href="https://github.com/dimsemenov/Magnific-Popup/blob/master/website/documentation.md">commit on GitHub</a>.</p>
+
+<p>Please ask general questions through <a href="http://stackoverflow.com/questions/ask?tags=magnific-popup">Stack Overflow</a> tagged with <code>magnific-popup</code>.</p>
+
+<p>If you’re looking for touch-friendly popup just for images, <a href="http://photoswipe.com/">PhotoSwipe</a> might be a better choice.</p>
+
+<h1 id="magnific-popup-docs">magnific popup docs</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#magnific-popup-docs">magnific popup docs</a>    <ul>
+      <li><a href="#including-files">Including files</a></li>
+      <li><a href="#initializing-popup">Initializing popup</a>        <ul>
+          <li><a href="#from-an-html-element">1. From an HTML element</a></li>
+          <li><a href="#from-a-group-of-elements-with-one-parent">2. From a group of elements with one parent</a></li>
+          <li><a href="#from-the-items-option">3. From the ‘items’ option</a></li>
+        </ul>
+      </li>
+      <li><a href="#content-types">Content Types</a></li>
+      <li><a href="#image-type">Image Type</a></li>
+      <li><a href="#iframe-type">Iframe Type</a></li>
+      <li><a href="#inline-type">Inline Type</a></li>
+      <li><a href="#ajax-type">Ajax Type</a></li>
+      <li><a href="#options">Options</a>        <ul>
+          <li><a href="#disableon">disableOn</a></li>
+          <li><a href="#key">key</a></li>
+          <li><a href="#midclick">midClick</a></li>
+          <li><a href="#mainclass">mainClass</a></li>
+          <li><a href="#preloader">preloader</a></li>
+          <li><a href="#focus">focus</a></li>
+          <li><a href="#closeoncontentclick">closeOnContentClick</a></li>
+          <li><a href="#closeonbgclick">closeOnBgClick</a></li>
+          <li><a href="#closebtninside">closeBtnInside</a></li>
+          <li><a href="#showclosebtn">showCloseBtn</a></li>
+          <li><a href="#enableescapekey">enableEscapeKey</a></li>
+          <li><a href="#modal">modal</a></li>
+          <li><a href="#aligntop">alignTop</a></li>
+          <li><a href="#index">index</a></li>
+          <li><a href="#fixedcontentpos">fixedContentPos</a></li>
+          <li><a href="#fixedbgpos">fixedBgPos</a></li>
+          <li><a href="#overflowy">overflowY</a></li>
+          <li><a href="#removaldelay">removalDelay</a></li>
+          <li><a href="#closemarkup">closeMarkup</a></li>
+          <li><a href="#prependto">prependTo</a></li>
+          <li><a href="#autofocuslast">autoFocusLast</a></li>
+        </ul>
+      </li>
+      <li><a href="#gallery">Gallery</a>        <ul>
+          <li><a href="#multiple-galleries">Multiple galleries</a></li>
+          <li><a href="#lazy-loading">Lazy-loading</a></li>
+        </ul>
+      </li>
+      <li><a href="#animation">Animation</a></li>
+      <li><a href="#retina">Retina</a></li>
+      <li><a href="#zoom-effect">Zoom effect</a></li>
+      <li><a href="#api">API</a>        <ul>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#public-methods">Public methods</a></li>
+          <li><a href="#public-properties">Public properties</a></li>
+        </ul>
+      </li>
+      <li><a href="#translating">Translating</a></li>
+      <li><a href="#faq">FAQ</a>        <ul>
+          <li><a href="#how-to-place-gallery-navigation-arrows-inside-the-image">How to place gallery navigation arrows “inside” the image?</a></li>
+          <li><a href="#how-to-override-some-function-without-modifying-the-source-files">How to override some function without modifying the source files?</a></li>
+          <li><a href="#how-to-add-spinner-indicator-instead-of-loading-text">How to add spinner indicator instead of “Loading…” text?</a></li>
+        </ul>
+      </li>
+      <li><a href="#known-issues">Known issues</a>        <ul>
+          <li><a href="#when-popup-is-opened-scrollbar-of-window-disappears-and-creates-empty-space-or-shifts-some-fixed-positioned-menu-or-whatever">When popup is opened scrollbar of window disappears and creates empty space or shifts some fixed-positioned menu (or whatever)</a></li>
+          <li><a href="#text-input-in-select2httpivaynberggithubioselect2-plugin-is-inactive-when-added-inside-popup">Text input in </a><a href="http://ivaynberg.github.io/select2/">Select2</a> plugin is inactive when added inside popup</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="including-files">Including files</h2>
+
+<p>You can get Magnific Popup JS and CSS file from the <a href="#mfp-build-tool" class="mfp-build-tool-link">build tool</a>, from the <code>dist/</code> folder in the <a href="https://github.com/dimsemenov/Magnific-Popup">GitHub repository</a>, or by compiling it yourself with Grunt.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Magnific Popup core CSS file --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"magnific-popup/magnific-popup.css"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- jQuery 1.7.2+ or Zepto.js 1.0+ --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Magnific Popup core JS file --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"magnific-popup/jquery.magnific-popup.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+<p>It’s not required, but we recommend placing CSS files in <code>&lt;head&gt;</code> and JavaScript files and initialization code in the footer of your site (before the closing <code>&lt;/body&gt;</code> tag).<br> If you already have <code>jquery.js</code> on your site, don’t include it a second time, or use <code>jQuery.noConflict();</code> mode. Optionally, you can include <a href="http://zeptojs.com/">Zepto.js</a> instead of <a href="http://jquery.com/">jQuery</a>, or <a href="http://stackoverflow.com/questions/8725905/zepto-fallback-to-jquery">choose which one to include</a> based on browser support.</p>
+
+<h2 id="initializing-popup">Initializing popup</h2>
+
+<p>Popup initialization code should be executed after document ready, for example:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'.image-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span><span class="s1">'image'</span><span class="p">});</span>
+<span class="p">});</span></code></pre></div>
+
+<p>There are three ways to initialize a popup:</p>
+
+<h3 id="from-an-html-element">1. From an HTML element</h3>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"test-popup-link"</span> <span class="na">href=</span><span class="s">"path-to-image.jpg"</span><span class="nt">&gt;</span>Open popup<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.test-popup-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span>
+  <span class="c1">// other options</span>
+<span class="p">});</span></code></pre></div>
+
+<h3 id="from-a-group-of-elements-with-one-parent">2. From a group of elements with one parent</h3>
+<p>Same as first one, but use this method if you are creating a popup 
+from a list of elements in one container. Note that this method does not
+ enable gallery mode, it just reduces the number of click event 
+handlers; each item will be opened as a single popup. If you wish to 
+enable gallery, add the <code>gallery:{enabled:true}</code> option.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"parent-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"path-to-image-1.jpg"</span><span class="nt">&gt;</span>Open popup 1<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"path-to-image-2.jpg"</span><span class="nt">&gt;</span>Open popup 2<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"path-to-image-3.jpg"</span><span class="nt">&gt;</span>Open popup 3<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.parent-container'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">delegate</span><span class="o">:</span> <span class="s1">'a'</span><span class="p">,</span> <span class="c1">// child items selector, by clicking on it popup will open</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span>
+  <span class="c1">// other options</span>
+<span class="p">});</span></code></pre></div>
+
+<h3 id="from-the-items-option">3. From the ‘items’ option</h3>
+<p>The <code>items</code> option defines data for the popup item(s) and 
+makes Magnific Popup ignore all attributes on the target DOM element. 
+The value for <code>items</code> can be a single object or an array of objects.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Example with single object</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#some-button'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+    <span class="nx">items</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="s1">'path-to-image-1.jpg'</span>
+    <span class="p">},</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span> <span class="c1">// this is default type</span>
+<span class="p">});</span>
+
+<span class="c1">// Example with multiple objects</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#some-button'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+    <span class="nx">items</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="s1">'path-to-image-1.jpg'</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="s1">'http://vimeo.com/123123'</span><span class="p">,</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">'iframe'</span> <span class="c1">// this overrides default type</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;div&gt;Dynamically created element&lt;/div&gt;'</span><span class="p">),</span> <span class="c1">// Dynamically created element</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">'inline'</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="s1">'&lt;div&gt;HTML string&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">'inline'</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="s1">'#my-popup'</span><span class="p">,</span> <span class="c1">// CSS selector of an element on page that should be used as a popup</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">'inline'</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nx">gallery</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span> <span class="c1">// this is default type</span>
+<span class="p">});</span></code></pre></div>
+
+<p>Play with <a href="http://codepen.io/dimsemenov/pen/vKrqs">this example on CodePen</a>.</p>
+
+<h2 id="content-types">Content Types</h2>
+
+<p>By default, Magnific Popup has four types of content: <code>image</code>, <code>iframe</code>, <code>inline</code>, and <code>ajax</code>. There is no any “auto-detection” of type based on URL, so you should define it manually.</p>
+
+<p>The type of a popup can be defined in a two ways:</p>
+
+<ol>
+  <li>
+    <p>Using the <code>type</code> option. E.g.: <code>$('.image-link').magnificPopup({type:'image'})</code>.</p>
+  </li>
+  <li>
+    <p>Using the <code>mfp-TYPE</code> CSS class (where <code>TYPE</code> is the desired content type). For example: <code>&lt;a class="mfp-image image-link"&gt;Open image&lt;/a&gt;</code>, <code>$('.image-link').magnificPopup()</code>.</p>
+  </li>
+</ol>
+
+<p>The second option always overrides the first, so you may initialize popups with multiple content types from one call.</p>
+
+<p><code>inline</code> is the default content type (from v0.8.4), so you may skip its definition.</p>
+
+<p><br></p>
+
+<p><strong>The source of the the popup content</strong> (for example, a path to an image, a path to an HTML file, a path to a video page) can be defined in a few ways:</p>
+
+<p>Method #1: From the <code>href</code> attribute:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"image-for-popup.jpg"</span><span class="nt">&gt;</span>Open image<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<p>Method #2: From the <code>data-mfp-src</code> attribute (overrides the first method):</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"some-image.jpg"</span> <span class="na">data-mfp-src=</span><span class="s">"image-for-popup.jpg"</span><span class="nt">&gt;</span>Open image<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<p>Method #3: From the <code>items</code> option</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">open</span><span class="p">({</span>
+  <span class="nx">items</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">src</span><span class="o">:</span> <span class="s1">'some-image.jpg'</span>
+  <span class="p">},</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span>
+<span class="p">});</span></code></pre></div>
+
+<p>If you want to modify how the source is parsed, you may hook into the <code>elementParse</code> callback. For example:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.image-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">type</span><span class="o">:</span><span class="s1">'image'</span><span class="p">,</span>
+  <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">elementParse</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Function will fire for each target element</span>
+      <span class="c1">// "item.el" is a target DOM element (if present)</span>
+      <span class="c1">// "item.src" is a source that you may modify</span>
+
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span> <span class="c1">// Do whatever you want with "item" object</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+<h2 id="image-type">Image Type</h2>
+
+<p>The path to the image must be set as the main source if you selected 
+this type. If your popup doesn’t have an image source and doesn’t have 
+an image that shouldn’t be preloaded (and retina-ized, etc.), use the <code>inline</code> type.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">image</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">markup</span><span class="o">:</span> <span class="s1">'&lt;div class="mfp-figure"&gt;'</span><span class="o">+</span>
+            <span class="s1">'&lt;div class="mfp-close"&gt;&lt;/div&gt;'</span><span class="o">+</span>
+            <span class="s1">'&lt;div class="mfp-img"&gt;&lt;/div&gt;'</span><span class="o">+</span>
+            <span class="s1">'&lt;div class="mfp-bottom-bar"&gt;'</span><span class="o">+</span>
+              <span class="s1">'&lt;div class="mfp-title"&gt;&lt;/div&gt;'</span><span class="o">+</span>
+              <span class="s1">'&lt;div class="mfp-counter"&gt;&lt;/div&gt;'</span><span class="o">+</span>
+            <span class="s1">'&lt;/div&gt;'</span><span class="o">+</span>
+          <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="c1">// Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button</span>
+
+  <span class="nx">cursor</span><span class="o">:</span> <span class="s1">'mfp-zoom-out-cur'</span><span class="p">,</span> <span class="c1">// Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.</span>
+
+  <span class="nx">titleSrc</span><span class="o">:</span> <span class="s1">'title'</span><span class="p">,</span> <span class="c1">// Attribute of the target element that contains caption for the slide.</span>
+  <span class="c1">// Or the function that should return the title. For example:</span>
+  <span class="c1">// titleSrc: function(item) {</span>
+  <span class="c1">//   return item.el.attr('title') + '&lt;small&gt;by Marsel Van Oosten&lt;/small&gt;';</span>
+  <span class="c1">// }</span>
+
+  <span class="nx">verticalFit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// Fits image in area vertically</span>
+
+  <span class="nx">tError</span><span class="o">:</span> <span class="s1">'&lt;a href="%url%"&gt;The image&lt;/a&gt; could not be loaded.'</span> <span class="c1">// Error message</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Please note that Magnific Popup doesn’t implement any 
+JavaScript-based client-side caching for images. So make sure that your 
+server <a href="https://developers.google.com/speed/docs/best-practices/caching#LeverageBrowserCaching">adds expires headers</a> so the image won’t be downloaded each time. </p>
+
+<h2 id="iframe-type">Iframe Type</h2>
+
+<p>By default Magnific Popup supports only one type of URL for each service:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// YouTube</span>
+<span class="s2">"http://www.youtube.com/watch?v=7HKoqNJtMTQ"</span>
+
+<span class="c1">// Vimeo</span>
+<span class="s2">"http://vimeo.com/123123"</span>
+
+<span class="c1">// Google Maps</span>
+<span class="s2">"https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&amp;hl=en&amp;t=v&amp;hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"</span></code></pre></div>
+
+<p>But you can extend it and make it support absolutely any URL or any other service (view <a href="http://codepen.io/dimsemenov/pen/jnohA">example that adds Dailymotion support</a>). Iframe options:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">iframe</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">markup</span><span class="o">:</span> <span class="s1">'&lt;div class="mfp-iframe-scaler"&gt;'</span><span class="o">+</span>
+            <span class="s1">'&lt;div class="mfp-close"&gt;&lt;/div&gt;'</span><span class="o">+</span>
+            <span class="s1">'&lt;iframe class="mfp-iframe" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;'</span><span class="o">+</span>
+          <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="c1">// HTML markup of popup, `mfp-close` will be replaced by the close button</span>
+
+  <span class="nx">patterns</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">youtube</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">index</span><span class="o">:</span> <span class="s1">'youtube.com/'</span><span class="p">,</span> <span class="c1">// String that detects type of video (in this case YouTube). Simply via url.indexOf(index).</span>
+
+      <span class="nx">id</span><span class="o">:</span> <span class="s1">'v='</span><span class="p">,</span> <span class="c1">// String that splits URL in a two parts, second part should be %id%</span>
+      <span class="c1">// Or null - full URL will be returned</span>
+      <span class="c1">// Or a function that should return %id%, for example:</span>
+      <span class="c1">// id: function(url) { return 'parsed id'; }</span>
+
+      <span class="nx">src</span><span class="o">:</span> <span class="s1">'//www.youtube.com/embed/%id%?autoplay=1'</span> <span class="c1">// URL that will be set as a source for iframe.</span>
+    <span class="p">},</span>
+    <span class="nx">vimeo</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">index</span><span class="o">:</span> <span class="s1">'vimeo.com/'</span><span class="p">,</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="s1">'/'</span><span class="p">,</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="s1">'//player.vimeo.com/video/%id%?autoplay=1'</span>
+    <span class="p">},</span>
+    <span class="nx">gmaps</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">index</span><span class="o">:</span> <span class="s1">'//maps.google.'</span><span class="p">,</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="s1">'%id%&amp;output=embed'</span>
+    <span class="p">}</span>
+
+    <span class="c1">// you may add here more sources</span>
+
+  <span class="p">},</span>
+
+  <span class="nx">srcAction</span><span class="o">:</span> <span class="s1">'iframe_src'</span><span class="p">,</span> <span class="c1">// Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".</span>
+<span class="p">}</span></code></pre></div>
+
+<h2 id="inline-type">Inline Type</h2>
+
+<p>To create popup from inline element you need to:</p>
+
+<p>1) Create a HTML element that you wish to display in popup and add it somewhere. Class <code>mfp-hide</code> is required to hide the popup from the page.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"test-popup"</span> <span class="na">class=</span><span class="s">"white-popup mfp-hide"</span><span class="nt">&gt;</span>
+  Popup content
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<p>2) Style this element. Magnific Popup by default doesn’t apply any styles to it, except vertical centering (if <code>alignTop:false</code>). Close button will be automatically appended inside (if <code>closeBtnInside:true</code>).</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.white-popup</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#FFF</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="k">max-width</span><span class="o">:</span> <span class="m">500px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">20px</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>3) Add button that will open the popup (source must match CSS id of an element (<code>#test-popup</code> in our case).</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Like so: --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#test-popup"</span> <span class="na">class=</span><span class="s">"open-popup-link"</span><span class="nt">&gt;</span>Show inline popup<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Or like so: --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mobile-friendly-page.html"</span> <span class="na">data-mfp-src=</span><span class="s">"#test-popup"</span> <span class="na">class=</span><span class="s">"open-popup-link"</span><span class="nt">&gt;</span>Show inline popup<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<p>4) Initialize script.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.open-popup-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">type</span><span class="o">:</span><span class="s1">'inline'</span><span class="p">,</span>
+  <span class="nx">midClick</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.</span>
+<span class="p">});</span></code></pre></div>
+
+<p>Here are some other ways to initialize popup:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// From HTML string</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">items</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="s1">'&lt;div class="white-popup"&gt;Dynamically created popup&lt;/div&gt;'</span><span class="p">,</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="s1">'inline'</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// From an element with ID #popup</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">items</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="s1">'#popup'</span><span class="p">,</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="s1">'inline'</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// From jQuery object</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">items</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;div class="white-popup"&gt;Dynamically created popup&lt;/div&gt;'</span><span class="p">),</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="s1">'inline'</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Open directly via API</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">open</span><span class="p">({</span>
+  <span class="nx">items</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">src</span><span class="o">:</span> <span class="s1">'&lt;div class="white-popup"&gt;Dynamically created popup&lt;/div&gt;'</span><span class="p">,</span> <span class="c1">// can be a HTML string, jQuery object, or CSS selector</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">'inline'</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+<p>I have created two examples on CodePen that will help you better understand how it works:</p>
+
+<ul>
+  <li><a href="http://codepen.io/dimsemenov/pen/GEKgb">Simple inline popup</a></li>
+  <li><a href="http://codepen.io/dimsemenov/pen/sHoxp">Advanced popup with markup and gallery mode</a></li>
+</ul>
+
+<h2 id="ajax-type">Ajax Type</h2>
+
+<p>To create such type of popup, first of define the path to the file that you wish to display and select <code>ajax</code> type of the popup. Popup itself should be styled in exactly the same way as an <a href="#inline-type">inline popup type</a>.</p>
+
+<p><strong>Important note!</strong> The contents of the file that you load is already a popup itself, so there must be <strong>only one root element</strong>.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"path-to-file.html"</span> <span class="na">class=</span><span class="s">"ajax-popup-link"</span><span class="nt">&gt;</span>Show inline popup<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.ajax-popup-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">'ajax'</span>
+<span class="p">});</span></code></pre></div>
+
+<p>Note that path to the file that will be loaded should have the same origin (e.g. be on the same domain), <a href="http://stackoverflow.com/questions/3076414/ways-to-circumvent-the-same-origin-policy">learn more</a>.</p>
+
+<p>Ajax options:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ajax</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">settings</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// Ajax settings object that will extend default one - http://api.jquery.com/jQuery.ajax/#jQuery-ajax-settings</span>
+  <span class="c1">// For example:</span>
+  <span class="c1">// settings: {cache:false, async:false}</span>
+
+  <span class="nx">cursor</span><span class="o">:</span> <span class="s1">'mfp-ajax-cur'</span><span class="p">,</span> <span class="c1">// CSS class that will be added to body during the loading (adds "progress" cursor)</span>
+  <span class="nx">tError</span><span class="o">:</span> <span class="s1">'&lt;a href="%url%"&gt;The content&lt;/a&gt; could not be loaded.'</span> <span class="c1">//  Error message, can contain %curr% and %total% tags if gallery is enabled</span>
+<span class="p">}</span></code></pre></div>
+
+<p>To modify content after it’s loaded, or to select and show just specific element from loaded file, there is a <code>parseAjax</code> callback:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">parseAjax</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">mfpResponse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// mfpResponse.data is a "data" object from ajax "success" callback</span>
+    <span class="c1">// for simple HTML file, it will be just String</span>
+    <span class="c1">// You may modify it to change contents of the popup</span>
+    <span class="c1">// For example, to show just #some-element:</span>
+    <span class="c1">// mfpResponse.data = $(mfpResponse.data).find('#some-element');</span>
+
+    <span class="c1">// mfpResponse.data must be a String or a DOM (jQuery) element</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Ajax content loaded:'</span><span class="p">,</span> <span class="nx">mfpResponse</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">ajaxContentAdded</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Ajax content is loaded and appended to DOM</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">content</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h2 id="options">Options</h2>
+
+<p>Options should be passed to the initialization code and separated by comma, e.g.:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.some-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="c1">// main options</span>
+  <span class="nx">disableOn</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span>
+  <span class="nx">key</span><span class="o">:</span> <span class="s1">'some-key'</span><span class="p">,</span>
+
+  <span class="nx">gallery</span><span class="o">:</span> <span class="p">{</span>
+    <span class="c1">// options for gallery</span>
+    <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="nx">image</span><span class="o">:</span> <span class="p">{</span>
+    <span class="c1">// options for image content type</span>
+    <span class="nx">titleSrc</span><span class="o">:</span> <span class="s1">'title'</span>
+  <span class="p">}</span>
+
+<span class="p">});</span></code></pre></div>
+
+<p>Options for specific modules are explained in their sections of documentation (e.g. related to text are in <a href="#translating">translating section</a>, related to gallery are in <a href="#gallery">gallery section</a>. Here you can find the list of general options:</p>
+
+<h3 id="disableon">disableOn</h3>
+
+<p><code class="def">null</code></p>
+
+<p>If window width is less than the number in this option lightbox will 
+not be opened and the default behavior of the element will be triggered.
+ Set to <code>0</code> to disable behavior. Option works only when you initialize Magnific Popup from DOM element.</p>
+
+<p>Can also accept Function as a parameter, which should return <code>true</code> if lightbox can be opened and <code>false</code> otherwise. For example:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">disableOn</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">width</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">600</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="key">key</h3>
+
+<p><code class="def">null</code></p>
+
+<p>“Key” option is a unique identifier of a single or a group of popups 
+with the same structure. If you will not define it, DOM elements will be
+ created and destroyed each time when you open and close popup.</p>
+
+<p>You may (and should) set an equal key to different popups if their 
+markup matches. By markup I mean options that change HTML structure of 
+the popup (e.g. close icon placement and HTML code of it).</p>
+
+<p>For example: you have many popups that show title, some text and 
+button - you may use one key for all of them, so only one instance of 
+this element is created. Same for popup that always contains image and 
+caption.</p>
+
+<p>You can delete cached templates like so:</p>
+
+<pre><code>// delete template with key "your-key"
+delete $.magnificPopup.instance.popupsCache['your-key'];
+
+// delete all templates
+$.magnificPopup.instance.popupsCache = {};
+</code></pre>
+
+<h3 id="midclick">midClick</h3>
+
+<p><code class="def">false</code></p>
+
+<p>If set to <code>true</code> lightbox is opened if the user clicked on
+ the middle mouse button, or click with Command/Ctrl key. Option works 
+only when you initialize Magnific Popup from DOM element.</p>
+
+<h3 id="mainclass">mainClass</h3>
+
+<p><code class="def">empty string</code></p>
+
+<p>String that contains classes that will be added to the root element of popup wrapper and to dark overlay. For example <code>"myClass"</code>, can also contain multiple classes - <code>'myClassOne myClassTwo'</code>.</p>
+
+<h3 id="preloader">preloader</h3>
+
+<p><code class="def">true</code></p>
+
+<p>Preloader in Magnific Popup is used as an indicator of current 
+status. If option enabled, it’s always present in DOM only text inside 
+of it changes. Below you can see explanation of CSS names that are 
+applied to container that holds preloader and content area depending on 
+the state of current item:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Content loading is in progress */</span>
+<span class="nc">.mfp-s-loading</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="c">/* Content successfully loaded */</span>
+<span class="nc">.mfp-s-ready</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="c">/* Error during loading  */</span>
+<span class="nc">.mfp-s-error</span> <span class="p">{</span> <span class="p">}</span></code></pre></div>
+
+<p>For example, if you want your error message to be in red add such CSS:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.mfp-s-error</span> <span class="nc">.mfp-preloader</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>You can trigger change of status manually by calling <code>instance.updateStatus('error', 'error message')</code>.</p>
+
+<h3 id="focus">focus</h3>
+
+<p><code class="def">empty string</code></p>
+
+<p>String with CSS selector of an element inside popup that should be 
+focused. Ideally it should be the first element of popup that can be 
+focused. For example <code>'input'</code> or <code>'#login-input'</code>. Leave empty to focus the popup itself.</p>
+
+<h3 id="closeoncontentclick">closeOnContentClick</h3>
+
+<p><code class="def">false</code></p>
+
+<p>Close popup when user clicks on content of it. It’s recommended to enable this option when you have only image in popup.</p>
+
+<h3 id="closeonbgclick">closeOnBgClick</h3>
+
+<p><code class="def">true</code></p>
+
+<p>Close the popup when user clicks on the dark overlay.</p>
+
+<h3 id="closebtninside">closeBtnInside</h3>
+
+<p><code class="def">true</code></p>
+
+<p>If enabled, Magnific Popup will put close button inside content of popup, and wrapper will get class <code>mfp-close-btn-in</code> (which in default CSS file makes color of it change). If markup of popup item is defined element with class <code>mfp-close</code> it will be replaced with this button, otherwise close button will be appended directly.</p>
+
+<h3 id="showclosebtn">showCloseBtn</h3>
+
+<p><code class="def">true</code></p>
+
+<p>Controls whether the close button will be displayed or not.</p>
+
+<h3 id="enableescapekey">enableEscapeKey</h3>
+
+<p><code class="def">true</code></p>
+
+<p>Controls whether pressing the escape key will dismiss the active popup or
+not.</p>
+
+<h3 id="modal">modal</h3>
+
+<p><code class="def">false</code></p>
+
+<p>When set to <code>true</code>, the popup will have a modal-like behavior: it won’t be
+possible to dismiss it by usual means (close button, escape key, or
+clicking in the overlay).</p>
+
+<p>This is a shortcut to set <code>closeOnContentClick</code>, <code>closeOnBgClick</code>,
+<code>showCloseBtn</code>, and <code>enableEscapeKey</code> to <code>false</code>.</p>
+
+<h3 id="aligntop">alignTop</h3>
+
+<p><code class="def">false</code></p>
+
+<p>If set to <code>true</code> popup is aligned to top instead of to center. (basically all this option does is adds <code>mfp-align-top</code> CSS class to popup which removes styles that align popup to center).</p>
+
+<h3 id="index">index</h3>
+
+<p><code class="def">null</code></p>
+
+<p>Used for gallery. Defines starting index. If popup is initialised from DOM element, this option will be ignored.</p>
+
+<h3 id="fixedcontentpos">fixedContentPos</h3>
+
+<p><code class="def">auto</code></p>
+
+<p>Popup content position. Can be <code>"auto"</code>, <code>true</code> or <code>false</code>.  If set to <code>true</code> - fixed position will be used, to <code>false</code> - absolute position based on current scroll. If set to <code>"auto"</code> popup will automatically disable this option when browser doesn’t support fixed position properly.</p>
+
+<h3 id="fixedbgpos">fixedBgPos</h3>
+
+<p><code class="def">auto</code></p>
+
+<p>Same as an option above, but it defines position property of the dark transluscent overlay. If set to <code>false</code>
+ - huge tall overlay will be generated that equals height of window to 
+emulate fixed position. It’s recommended to set this option to <code>true</code> if you animate this dark overlay and content is most likely will not be zoomed, as size of it will be much smaller.</p>
+
+<h3 id="overflowy">overflowY</h3>
+
+<p><code class="def">auto</code></p>
+
+<p>Defines scrollbar of the popup, works as overflow-y CSS property - any <a href="https://developer.mozilla.org/en-US/docs/CSS/overflow-y">CSS acceptable value</a> is allowed (e.g. <code>auto</code>, <code>scroll</code>, <code>hidden</code>). Option is applied only when fixed position is enabled.</p>
+
+<p>There is no option <code>overflowX</code>, but you may easily emulate it just via CSS.</p>
+
+<h3 id="removaldelay">removalDelay</h3>
+
+<p><code class="def">0</code></p>
+
+<p>Delay before popup is removed from DOM. Used for the <a href="#animation">animation</a>.</p>
+
+<h3 id="closemarkup">closeMarkup</h3>
+
+<p><code class="def">&lt;button title="%title%" type="button" class="mfp-close"&gt;&amp;#215;&lt;/button&gt;</code></p>
+
+<p>Markup of close button. %title% will be replaced with option <code>tClose</code>.</p>
+
+<h3 id="prependto">prependTo</h3>
+
+<p><code class="def">document.body</code></p>
+
+<p>The DOM element to which popup will be added. Useful when you’re using ASP.NET where popup should be inside <code>form</code>. Option available since 2013/12/04.</p>
+
+<h3 id="autofocuslast">autoFocusLast</h3>
+
+<p><code class="def">true</code></p>
+
+<p>If set to <code>true</code> last focused element before popup showup will be focused after popup close. Option available since 2015/12/16.</p>
+
+<h2 id="gallery">Gallery</h2>
+
+<p>The gallery module allows you to switch the content of the popup and 
+adds navigation arrows. It can switch and mix any types of content, not 
+just images. Gallery options:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gallery</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">enabled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// set to true to enable gallery</span>
+
+  <span class="nx">preload</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="c1">// read about this option in next Lazy-loading section</span>
+
+  <span class="nx">navigateByImgClick</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+
+  <span class="nx">arrowMarkup</span><span class="o">:</span> <span class="s1">'&lt;button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"&gt;&lt;/button&gt;'</span><span class="p">,</span> <span class="c1">// markup of an arrow button</span>
+
+  <span class="nx">tPrev</span><span class="o">:</span> <span class="s1">'Previous (Left arrow key)'</span><span class="p">,</span> <span class="c1">// title for left button</span>
+  <span class="nx">tNext</span><span class="o">:</span> <span class="s1">'Next (Right arrow key)'</span><span class="p">,</span> <span class="c1">// title for right button</span>
+  <span class="nx">tCounter</span><span class="o">:</span> <span class="s1">'&lt;span class="mfp-counter"&gt;%curr% of %total%&lt;/span&gt;'</span> <span class="c1">// markup of counter</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Example:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// This will create a single gallery from all elements that have class "gallery-item"</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.gallery-item'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span><span class="p">,</span>
+  <span class="nx">gallery</span><span class="o">:</span><span class="p">{</span>
+    <span class="nx">enabled</span><span class="o">:</span><span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+<h3 id="multiple-galleries">Multiple galleries</h3>
+
+<p>To have multiple galleries on a page, you need to create a new instance of Magnific Popup for each separate gallery. For example</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"gallery"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"path-to-image.jpg"</span><span class="nt">&gt;</span>Open image 1 (gallery #1)<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"path-to-image.jpg"</span><span class="nt">&gt;</span>Open image 2 (gallery #1)<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"gallery"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"path-to-image.jpg"</span><span class="nt">&gt;</span>Open image 1 (gallery #2)<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"path-to-image.jpg"</span><span class="nt">&gt;</span>Open image 2 (gallery #2)<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://vimeo.com/123123"</span> <span class="na">class=</span><span class="s">"mfp-iframe"</span><span class="nt">&gt;</span>Open video (gallery #2). Class mfp-iframe forces "iframe" content type on this item.<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.gallery'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// the containers for all your galleries</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+        <span class="nx">delegate</span><span class="o">:</span> <span class="s1">'a'</span><span class="p">,</span> <span class="c1">// the selector for gallery item</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span><span class="p">,</span>
+        <span class="nx">gallery</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">enabled</span><span class="o">:</span><span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span></code></pre></div>
+
+<p>You don’t necessarily need to use <code>delegate</code> option, it can be just <code>$(this).find('a').magnificPopup( ...</code>.</p>
+
+<h3 id="lazy-loading">Lazy-loading</h3>
+
+<p>Lazy-loading option preloads nearby items. It accepts an array with 
+two integers. The first is the number of items to preload before the 
+current. The second is the number of images to preload after the 
+current. For example, <code>preload: [1,3]</code> will load 3 next items and 1 that is before current. These values are automatically switched based on direction of movement. </p>
+
+<p>By default all what it does is just searches for an image tag and 
+preloads it with JavaScript. But you can extend it and do your custom 
+preloading logic with help of <code>lazyLoad</code> event, like so:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">lazyLoad</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span> <span class="c1">// Magnific Popup data object that should be loaded</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>“Preload” option can be changed dynamically. To disable it set <code>preload:0</code>.</p>
+
+<h2 id="animation">Animation</h2>
+
+<p>Animation can be added to any example. For Ajax based popup content animation is fired only after content is loaded.</p>
+
+<p>After popup is opened popup wrapper and background overlay get class <code>mfp-ready</code>. Before popup is removed they get class <code>mfp-removing</code>.</p>
+
+<p>For example:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Initialize popup as usual</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.popup-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="c1">// Delay in milliseconds before popup is removed</span>
+  <span class="nx">removalDelay</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span>
+
+  <span class="c1">// Class that is added to popup wrapper and background</span>
+  <span class="c1">// make it unique to apply your CSS animations just to this exact popup</span>
+  <span class="nx">mainClass</span><span class="o">:</span> <span class="s1">'mfp-fade'</span>
+<span class="p">});</span></code></pre></div>
+
+<p>Then just play with CSS3 transitions:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* overlay at start */</span>
+<span class="nc">.mfp-fade.mfp-bg</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.15s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.15s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+  <span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.15s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/* overlay animate in */</span>
+<span class="nc">.mfp-fade.mfp-bg.mfp-ready</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">8</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/* overlay animate out */</span>
+<span class="nc">.mfp-fade.mfp-bg.mfp-removing</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* content at start */</span>
+<span class="nc">.mfp-fade.mfp-wrap</span> <span class="nc">.mfp-content</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.15s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.15s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+  <span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.15s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/* content animate it */</span>
+<span class="nc">.mfp-fade.mfp-wrap.mfp-ready</span> <span class="nc">.mfp-content</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/* content animate out */</span>
+<span class="nc">.mfp-fade.mfp-wrap.mfp-removing</span> <span class="nc">.mfp-content</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Please use animation wisely and when it’s really required. Do not 
+enable it when your popup may contain large image or a lot of HTML text.</p>
+
+<h2 id="retina">Retina</h2>
+
+<p>“Retina” module allows you to display high-resolution images on high-dpi screens with different <code>devicePixelRatio</code>. Module works only with “image” type and only when <code>window.devicePixelRatio &gt; 1</code>.</p>
+
+<p>First of prepare two sets of images. Default supported syntax requires <code>@2x</code> at the end of the image file name, e.g.: <code>image.jpg</code> &gt; <code>image@2x.jpg</code>. Then initialize popup as usual and add <code>ratio</code> in retina set of options.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"image.jpg"</span> <span class="na">class=</span><span class="s">"image-link"</span><span class="nt">&gt;</span>Open popup<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Initialize popup as usual</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.image-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span><span class="p">,</span>
+
+  <span class="nx">retina</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">ratio</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// Increase this number to enable retina image support.</span>
+    <span class="c1">// Image in popup will be scaled down by this number.</span>
+    <span class="c1">// Option can also be a function which should return a number (in case you support multiple ratios). For example:</span>
+    <span class="c1">// ratio: function() { return window.devicePixelRatio === 1.5 ? 1.5 : 2  }</span>
+
+
+    <span class="nx">replaceSrc</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">ratio</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">src</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\.\w+$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="s1">'@2x'</span> <span class="o">+</span> <span class="nx">m</span><span class="p">;</span> <span class="p">});</span>
+    <span class="p">}</span> <span class="c1">// function that changes image source</span>
+  <span class="p">}</span>
+
+<span class="p">});</span></code></pre></div>
+
+<p>View <a href="http://codepen.io/dimsemenov/pen/Dohka">example of retina popup on CodePen</a>.</p>
+
+<h2 id="zoom-effect">Zoom effect</h2>
+
+<p>Zooming only works for images, for now. To add zooming effect, first 
+of make sure that you included “zoom” module to Magnific Popup build 
+(since v0.9.1.). Then follow steps:</p>
+
+<p>1) Add the thumbnail with link that will open the popup, for example:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"image.jpg"</span> <span class="na">class=</span><span class="s">"image-link"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"thumbnails.jpg"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<p>You need to make sure that ratio of your thumbnail matches the ratio 
+of the big image, to avoid “jumps” at the end of zoom-out animation.</p>
+
+<p>2) Initialize popup with <code>zoom</code> options:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Initialize popup as usual</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.image-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span><span class="p">,</span>
+  <span class="nx">mainClass</span><span class="o">:</span> <span class="s1">'mfp-with-zoom'</span><span class="p">,</span> <span class="c1">// this class is for CSS animation below</span>
+
+  <span class="nx">zoom</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// By default it's false, so don't forget to enable it</span>
+
+    <span class="nx">duration</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span> <span class="c1">// duration of the effect, in milliseconds</span>
+    <span class="nx">easing</span><span class="o">:</span> <span class="s1">'ease-in-out'</span><span class="p">,</span> <span class="c1">// CSS transition easing function</span>
+
+    <span class="c1">// The "opener" function should return the element from which popup will be zoomed in</span>
+    <span class="c1">// and to which popup will be scaled down</span>
+    <span class="c1">// By defailt it looks for an image tag:</span>
+    <span class="nx">opener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">openerElement</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// openerElement is the element on which popup was initialized, in this case its &lt;a&gt; tag</span>
+      <span class="c1">// you don't need to add "opener" option if this code matches your needs, it's defailt one.</span>
+      <span class="k">return</span> <span class="nx">openerElement</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="s1">'img'</span><span class="p">)</span> <span class="o">?</span> <span class="nx">openerElement</span> <span class="o">:</span> <span class="nx">openerElement</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'img'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="p">});</span></code></pre></div>
+
+<p>3) Optionally, add CSS fading animation to background overlay</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.mfp-with-zoom</span> <span class="nc">.mfp-container</span><span class="o">,</span>
+<span class="nc">.mfp-with-zoom.mfp-bg</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">backface</span><span class="o">-</span><span class="k">visibility</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
+  <span class="c">/* ideally, transition speed should match zoom duration */</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+  <span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.mfp-with-zoom.mfp-ready</span> <span class="nc">.mfp-container</span> <span class="p">{</span>
+    <span class="k">opacity</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.mfp-with-zoom.mfp-ready.mfp-bg</span> <span class="p">{</span>
+    <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">8</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.mfp-with-zoom.mfp-removing</span> <span class="nc">.mfp-container</span><span class="o">,</span>
+<span class="nc">.mfp-with-zoom.mfp-removing.mfp-bg</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Zoom module adds <code>zoomAnimationEnded</code> callback, which fires when zoom-in animation is finished.</p>
+
+<h2 id="api">API</h2>
+
+<p>There is a much bigger list of public events, methods and variables 
+than provided here which is used for module development, look inside 
+code or type in console <code>$.magnificPopup.instance.</code> to find them, if you think that something should be added to docs - please submit commit.</p>
+
+<h3 id="events">Events</h3>
+
+<p>You can define callbacks in <code>callbacks</code> option. Besides that, all Magnific Popup events are also dispatched using <code>triggerHandler</code> on target element (or to document if the element doesn’t exist).</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.image-link'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="c1">// you may add other options here, e.g.:</span>
+  <span class="nx">preloader</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+
+  <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">open</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// Will fire when this exact popup is opened</span>
+      <span class="c1">// this - is Magnific Popup object</span>
+    <span class="p">},</span>
+    <span class="nx">close</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// Will fire when popup is closed</span>
+    <span class="p">}</span>
+    <span class="c1">// e.t.c.</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Alternative method: using events</span>
+<span class="c1">// Name of event should start from  `mfp` and the first letter should be uppercase.</span>
+<span class="c1">// e.g. 'open' becomes 'mfpOpen', 'beforeOpen' becomes 'mfpBeforeOpen'.</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.image-link'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'mfpOpen'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span> <span class="cm">/*, params */</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Popup opened'</span><span class="p">,</span>  <span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">instance</span><span class="p">);</span>
+<span class="p">});</span></code></pre></div>
+
+<p>List of callbacks. In each callback <code>this</code> is <code>$.magnificPopup.instance</code>, so you can execute methods (<code>this.close()</code>) or access public variables  (<code>this.currItem</code>).</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">beforeOpen</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Start of popup initialization'</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">elementParse</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Function will fire for each target element</span>
+    <span class="c1">// "item.el" is a target DOM element (if present)</span>
+    <span class="c1">// "item.src" is a source that you may modify</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Parsing content. Item object that is being parsed:'</span><span class="p">,</span> <span class="nx">item</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">change</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Content changed'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">content</span><span class="p">);</span> <span class="c1">// Direct reference to your popup element</span>
+  <span class="p">},</span>
+  <span class="nx">resize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Popup resized'</span><span class="p">);</span>
+    <span class="c1">// resize event triggers only when height is changed or layout forced</span>
+  <span class="p">},</span>
+  <span class="nx">open</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Popup is opened'</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">beforeClose</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Callback available since v0.9.0</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Popup close has been initiated'</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">close</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Popup removal initiated (after removalDelay timer finished)'</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">afterClose</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Popup is completely closed'</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">markupParse</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">template</span><span class="p">,</span> <span class="nx">values</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Triggers each time when content of popup changes</span>
+    <span class="c1">// console.log('Parsing:', template, values, item);</span>
+  <span class="p">},</span>
+  <span class="nx">updateStatus</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Status changed'</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+    <span class="c1">// "data" is an object that has two properties:</span>
+    <span class="c1">// "data.status" - current status type, can be "loading", "error", "ready"</span>
+    <span class="c1">// "data.text" - text that will be displayed (e.g. "Loading...")</span>
+    <span class="c1">// you may modify this properties to change current status or its text dynamically</span>
+  <span class="p">},</span>
+  <span class="nx">imageLoadComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// fires when image in current popup finished loading</span>
+    <span class="c1">// avaiable since v0.9.0</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Image loaded'</span><span class="p">);</span>
+  <span class="p">},</span>
+
+
+  <span class="c1">// Only for ajax popup type</span>
+  <span class="nx">parseAjax</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">mfpResponse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// mfpResponse.data is a "data" object from ajax "success" callback</span>
+    <span class="c1">// for simple HTML file, it will be just String</span>
+    <span class="c1">// You may modify it to change contents of the popup</span>
+    <span class="c1">// For example, to show just #some-element:</span>
+    <span class="c1">// mfpResponse.data = $(mfpResponse.data).find('#some-element');</span>
+
+    <span class="c1">// mfpResponse.data must be a String or a DOM (jQuery) element</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Ajax content loaded:'</span><span class="p">,</span> <span class="nx">mfpResponse</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">ajaxContentAdded</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Ajax content is loaded and appended to DOM</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">content</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="public-methods">Public methods</h3>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Open popup immediately. If popup is already opened - it'll just overwite the content (but old options will be kept).</span>
+<span class="c1">// - first parameter: options object</span>
+<span class="c1">// - second parameter (optional): index of item to open</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">open</span><span class="p">({</span>
+  <span class="nx">items</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">src</span><span class="o">:</span> <span class="s1">'someimage.jpg'</span>
+  <span class="p">},</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span>
+
+  <span class="c1">// You may add options here, they're exactly the same as for $.fn.magnificPopup call</span>
+  <span class="c1">// Note that some settings that rely on click event (like disableOn or midClick) will not work here</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span> <span class="c1">// Close popup that is currently opened (shorthand)</span>
+
+
+
+<span class="cm">/*</span>
+<span class="cm">  Methods below don't have shorthand like "open" and "close".</span>
+<span class="cm">  They should be called through "instance" object.</span>
+<span class="cm">  "instance" is available only when at least one popup was opened.</span>
+<span class="cm">  For example: $.magnificPopup.instance.doSomething();</span>
+<span class="cm">*/</span>
+
+<span class="kd">var</span> <span class="nx">magnificPopup</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span> <span class="c1">// save instance in magnificPopup variable</span>
+
+
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span> <span class="c1">// Close popup that is currently opened</span>
+
+
+<span class="c1">// Navigation when gallery is enabled</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span> <span class="c1">// go to next item</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">prev</span><span class="p">();</span> <span class="c1">// go to prev item</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">goTo</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span> <span class="c1">// go to item #4</span>
+
+
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">updateItemHTML</span><span class="p">();</span> <span class="c1">// updates the popup content. Useful after you change "items" array</span>
+
+
+<span class="c1">// Update status of popup</span>
+<span class="c1">// First param: status type, can be: 'loading', 'error' or 'ready'.</span>
+<span class="c1">// Second param: message that will be displayed.</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">'loading'</span><span class="p">,</span> <span class="s1">'The loading text...'</span><span class="p">);</span></code></pre></div>
+
+<p>You may also call ANY method via <code>$.fn.magnificPopup('methodName' /*, param1, param2 ... */)</code> after you initialized the popup, for example:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// First of make sure that you initialized popup on element $('.element-with-popup')</span>
+
+<span class="c1">// Then</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.element-with-popup'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">(</span><span class="s1">'open'</span><span class="p">);</span> <span class="c1">// Will open the popup</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.element-with-popup'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">(</span><span class="s1">'open'</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// Will open popup with 5th item</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.element-with-popup'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">(</span><span class="s1">'next'</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.element-with-popup'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">(</span><span class="s1">'goTo'</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span></code></pre></div>
+
+<p>You may also open the popup directly at initialization:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.element-with-popup'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">items</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">src</span><span class="o">:</span> <span class="s1">'path-to-image.jpg'</span><span class="p">,</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">'image'</span>
+  <span class="p">}</span>
+  <span class="c1">// (optionally) other options</span>
+<span class="p">}).</span><span class="nx">magnificPopup</span><span class="p">(</span><span class="s1">'open'</span><span class="p">);</span></code></pre></div>
+
+<h3 id="public-properties">Public properties</h3>
+
+<p>Most properties are available only after the popup is opened. Only most used are listed here.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">magnificPopup</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span>
+
+
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">items</span> <span class="c1">// array that holds data for popup items</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">currItem</span> <span class="c1">// data for current item</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">index</span> <span class="c1">// current item index (integer)</span>
+
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">content</span> <span class="c1">// direct reference to jQuery DOM element that you open in popup</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">bgOverlay</span> <span class="c1">// transluscent overlay</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">wrap</span> <span class="c1">// container that holds all controls and contentContainer</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">contentContainer</span> <span class="c1">// container that holds popup content, child of wrap</span>
+
+
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">st</span><span class="p">.</span><span class="nx">el</span> <span class="c1">// Target clicked element that opened popup (works if popup is initialized from DOM element)</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">st</span><span class="p">.</span><span class="nx">mainEl</span> <span class="c1">// Main element (or collection of elements) from which popup was initialized (--''--)</span>
+
+
+
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">isIE7</span>
+<span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">isIOS</span></code></pre></div>
+
+<h2 id="translating">Translating</h2>
+
+<p>Internationalization of Magnific Popup is very simple, all you need 
+is to extend default settings object with new values, or just pass 
+options to your initialization code. If you’re making some public plugin
+ or theme, it’s strongly recommended to use only second method to avoid 
+conflicts.</p>
+
+<p>Some properties contain %keys% that should not be translated, but may be reordered or removed.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Add it after jquery.magnific-popup.js and before first initialization code</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">defaults</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">tClose</span><span class="o">:</span> <span class="s1">'Close (Esc)'</span><span class="p">,</span> <span class="c1">// Alt text on close button</span>
+  <span class="nx">tLoading</span><span class="o">:</span> <span class="s1">'Loading...'</span><span class="p">,</span> <span class="c1">// Text that is displayed during loading. Can contain %curr% and %total% keys</span>
+  <span class="nx">gallery</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">tPrev</span><span class="o">:</span> <span class="s1">'Previous (Left arrow key)'</span><span class="p">,</span> <span class="c1">// Alt text on left arrow</span>
+    <span class="nx">tNext</span><span class="o">:</span> <span class="s1">'Next (Right arrow key)'</span><span class="p">,</span> <span class="c1">// Alt text on right arrow</span>
+    <span class="nx">tCounter</span><span class="o">:</span> <span class="s1">'%curr% of %total%'</span> <span class="c1">// Markup for "1 of 7" counter</span>
+  <span class="p">},</span>
+  <span class="nx">image</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">tError</span><span class="o">:</span> <span class="s1">'&lt;a href="%url%"&gt;The image&lt;/a&gt; could not be loaded.'</span> <span class="c1">// Error message when image could not be loaded</span>
+  <span class="p">},</span>
+  <span class="nx">ajax</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">tError</span><span class="o">:</span> <span class="s1">'&lt;a href="%url%"&gt;The content&lt;/a&gt; could not be loaded.'</span> <span class="c1">// Error message when ajax request failed</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+<p>Same thing, but applied only to specific slider:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.some-button'</span><span class="p">).</span><span class="nx">magnificPopup</span><span class="p">({</span>
+  <span class="nx">tClose</span><span class="o">:</span> <span class="s1">'Close (Esc)'</span><span class="p">,</span>
+  <span class="nx">tLoading</span><span class="o">:</span> <span class="s1">'Loading...'</span><span class="p">,</span>
+  <span class="nx">gallery</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">tPrev</span><span class="o">:</span> <span class="s1">'Previous (Left arrow key)'</span><span class="p">,</span>
+    <span class="nx">tNext</span><span class="o">:</span> <span class="s1">'Next (Right arrow key)'</span><span class="p">,</span>
+    <span class="nx">tCounter</span><span class="o">:</span> <span class="s1">'%curr% of %total%'</span>
+  <span class="p">},</span>
+  <span class="nx">image</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">tError</span><span class="o">:</span> <span class="s1">'&lt;a href="%url%"&gt;The image&lt;/a&gt; could not be loaded.'</span>
+  <span class="p">},</span>
+  <span class="nx">ajax</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">tError</span><span class="o">:</span> <span class="s1">'&lt;a href="%url%"&gt;The request&lt;/a&gt; failed.'</span>
+  <span class="p">}</span>
+
+  <span class="c1">// surely, you may add other options here</span>
+
+<span class="p">});</span></code></pre></div>
+
+<h2 id="faq">FAQ</h2>
+
+<h3 id="how-to-place-gallery-navigation-arrows-inside-the-image">How to place gallery navigation arrows “inside” the image?</h3>
+
+<p>See <a href="http://codepen.io/dimsemenov/pen/JGjHK">example on CodePen</a>.</p>
+
+<h3 id="how-to-override-some-function-without-modifying-the-source-files">How to override some function without modifying the source files?</h3>
+
+<p>Rewrite the function that you wish to modify by editing Magnific Popup object, you can access it like so <code>$.magnificPopup.instance</code>. For example to override function that goes to “next” item in gallery:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// add this code after popup JS file is included</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// Do something</span>
+
+  <span class="c1">// You may call parent ("original") method like so:</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">magnificPopup</span><span class="p">.</span><span class="nx">proto</span><span class="p">.</span><span class="nx">next</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span> <span class="cm">/*, optional arguments */</span><span class="p">);</span>
+<span class="p">};</span></code></pre></div>
+
+<p>You may override any public function, just note that this change applies globally.</p>
+
+<h3 id="how-to-add-spinner-indicator-instead-of-loading-text">How to add spinner indicator instead of “Loading…” text?</h3>
+
+<p>Just style element with class <code>.mfp-preloader</code>. <a href="http://codepen.io/dimsemenov/pen/aKwxt">Example on CodePen</a>. <a href="http://codepen.io/dimsemenov/pen/HdjtL">Another example</a> (if you want to show image only after its fully loaded).</p>
+
+<h2 id="known-issues">Known issues</h2>
+
+<h3 id="when-popup-is-opened-scrollbar-of-window-disappears-and-creates-empty-space-or-shifts-some-fixed-positioned-menu-or-whatever">When popup is opened scrollbar of window disappears and creates empty space or shifts some fixed-positioned menu (or whatever)</h3>
+
+<p>Solution 1: add <a href="#overflowy">overflowY:’scroll’</a> option to
+ force the scrollbar. Solution 2: use open/close popup callbacks to 
+apply custom styling to menu that behaves incorrectly.</p>
+
+<h3 id="text-input-in-select2httpivaynberggithubioselect2-plugin-is-inactive-when-added-inside-popup">Text input in <a href="http://ivaynberg.github.io/select2/">Select2</a> plugin is inactive when added inside popup</h3>
+
+<p>Refer to <a href="https://github.com/dimsemenov/Magnific-Popup/issues/280">this discussion on GitHub</a>.</p>
+
+<h2 id="contribute">Make Magnific Popup better!</h2>
+
+<p>Improve this documentation page (simply submit commit <a href="https://github.com/dimsemenov/Magnific-Popup/edit/master/website/documentation.md">via GitHub</a>).
+ Any improvements, including your own CodePen examples are very welcome.
+ And, lastly, don’t forget to star the script on GitHub:</p>
+
+<div>
+  <iframe src="http://ghbtns.com/github-btn.html?user=dimsemenov&amp;repo=magnific-popup&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" scrolling="0" width="170" height="30" frameborder="0">&amp;nbsp;</iframe>
+</div>
+
+<h2>Keep updated</h2>
+<div id="mc_embed_signup" class="embed-form">
+  <form action="http://dimsemenov.us1.list-manage.com/subscribe/post?u=ef6026d946a7b5d41d92c02e4&amp;id=54fae727da" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <p>Get notified about important update or new release.</p>
+    <div class="mc-field-group">
+      <input type="email" name="EMAIL" placeholder="Your email" class="required email" id="mce-EMAIL">
+      <input type="hidden" id="group_2" name="group[2065][2]" value="true">
+      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+    </div>
+    <p style="font-size: 12px; margin: 4px 0 0 0;">Newsletter is sent 3 times a year at max. Powered by Mailchimp.</p>
+  </form>
+ </div>
+
+
+    <div id="footer">
+      Created by <a href="http://dimsemenov.com/" rel="author">Dmitry Semenov</a>. Collaborator <a href="https://twitter.com/ChubbyNinjaa">Danny Hearnah</a>.
+    </div>
+
+  </div>
+  
+  
+
+  
+    
+      <script type="text/javascript" async="" src="Magnific%20Popup%20Documentation_files/watch.js"></script><script type="text/javascript" async="" src="Magnific%20Popup%20Documentation_files/ga.js"></script><script>
+        document.write('<script src=third-party-libs/' +
+        ('__proto__' in {} ? 'zepto' : 'jquery') +
+        '.min.js><\/script>')
+      </script><script src="Magnific%20Popup%20Documentation_files/zepto.js"></script>
+      <script src="Magnific%20Popup%20Documentation_files/jquery.js"></script>
+    
+  
+
+  
+<!-- Analytics start -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25969065-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    function recordOutboundLink(link, category, action) {
+      _gat._getTrackerByName()._trackEvent(category, action);
+      setTimeout('document.location = "' + link.href + '"', 100);
+    }
+</script>
+
+<!-- ya metrika -->
+<script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter11382601 = new Ya.Metrika({id:11382601, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/11382601" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+  
+    <!-- Basic idea of such build tool is stolen from modernizr.com -->
+<div id="mfp-build-tool" class="mfp-hide">
+  <h2>Magnific Popup v1.1.0 Build Tool</h2>
+  <form id="mfp-build-form">
+    <p class="help-block">Here you can generate optimized version of main JS file. Please note that CSS you should download directly: <a target="_blank" href="https://raw.github.com/dimsemenov/Magnific-Popup/master/src/css/main.scss">Sass version</a> or <a target="_blank" href="https://raw.github.com/dimsemenov/Magnific-Popup/master/dist/magnific-popup.css">CSS version</a>.</p>
+     <label class="checkbox">
+      <input type="checkbox" name="inline" checked="checked"> Inline
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="image" checked="checked"> Image
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="ajax" checked="checked"> Ajax
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="iframe" checked="checked"> Iframe
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="gallery" checked="checked"> Gallery
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="retina" checked="checked"> High-DPI (retina) support for image type
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="imagezoom" checked="checked"> Image zoom animation
+    </label>
+  </form> 
+     
+  <br>
+  <div>
+    <button id="mfp-build-button">Generate build</button>  
+  	<label class="checkbox">
+      <input id="mfp-minify" type="checkbox" name="minify" checked="checked"> Minify code
+    </label> 
+  </div>
+  <br>
+  <p id="mfp-build-status" style="display:none"></p>
+  <br>
+  <textarea id="mfp-build-tool-out" style="width: 100%; height: 300px; display:none;"></textarea>
+</div>
+
+
+
+<script type="text/javascript">
+	$(document).ready(function($) {
+		
+		$('.mfp-build-tool-link').magnificPopup({closeBtnInside:true, type:'inline', midClick: true});
+
+		var h = window.location.hash;
+		if(h.indexOf('build=') > -1) {
+			var formInputs = $('#mfp-build-form input');
+			
+		    if(h.indexOf('&') > 0) {
+		       h = h.substr(0, h.indexOf('&'));
+		    }
+		    var items = h.substr(h.indexOf('build=') + 6, h.length).split('+');
+		    for(var i = 0; i < items.length; i++) {
+		      var name = items[i];
+		      if(name) {
+		        formInputs.filter('[name="' +name+ '"]').addClass('present');
+		      }
+		    }
+	    	formInputs.not('.present').prop('checked', false);
+    	}
+
+
+	    var button = $('#mfp-build-button').click(function(e) {
+	    	e.preventDefault();
+
+	    	button.attr('disabled', 'disabled');
+
+	    	var statusTimeout;
+	    	var setStatus = function(msg, type) {
+	    		clearTimeout(statusTimeout);
+	    		$('#mfp-build-status').html('<span class="'+type+'">'+msg+'</span>').show();
+	    	};
+	    	setStatus('Wait a moment please...', 'progress');
+	    	$('#mfp-build-tool-out').val( '' );
+
+	    	
+
+	    	var minify = $('#mfp-minify')[0].checked;
+	    	var removeModule = function(source, key) {
+			        source = source.replace(new RegExp("\\/\\*>>"+key+"\\*\\/[\\s|\\S]*?\\/\\*>>"+key+"\\*\\/", "ig"), "");
+			        return source;
+			    };
+
+
+
+
+
+			var onError = function() {
+				setStatus("Error: Build tool wasn't able to GET the js file. Please try again or make file by yourself using Grunt.", 'error');
+			};
+
+			var version = '1.1.0';
+			var loadedScripts = [];
+		    var onScriptsLoaded = function() {
+
+		    	
+			    var src = loadedScripts[0];
+
+			    var hash = '',
+		            name;
+
+		        $('#mfp-build-form input').each(function() {
+		          name = $(this).attr('name');
+
+		          if( this.checked ) {
+		            hash += name + '+';
+		          } else {
+		            src = removeModule(src, name);
+		          }
+
+		        });
+
+		        var output = '';
+
+		        if(hash) {
+		        	hash = hash.substr(0, hash.length-1);
+		        }
+		        
+		        if(minify) {
+					src = uglify(src, ["--extra","--unsafe"]);
+					output = '// Magnific Popup v'+version+' by Dmitry Semenov' + "\n";
+		        	output += '// http://bit.ly/magnific-popup' + (hash ? '#build=' + hash : '') + "\n" + src;
+		        } else {
+		        	output = src;
+		        }
+		        
+		        if(!hash) {
+		        	hash = 'core';
+		        } else {
+		       		hash = 'core+' + hash;
+		        }
+
+		        $('#mfp-build-tool-out').val( output ).show();
+
+		        button.removeAttr('disabled');
+
+		        setStatus('Magnific Popup main js file successfully generated! You can copy generated code from textarea below.' + (hash ? (' Your build includes: <strong>' + hash.split('+').join(', ')) + '</strong>. ' : ''), 'success');
+		    };
+
+
+		    $.ajax({
+			 	url:"dist/jquery.magnific-popup.js?v="+version, 
+			 	dataType: 'text',
+			 	success: function( data) {
+			 		loadedScripts[0] = data;
+			 		if(loadedScripts[1]) {
+			 			onScriptsLoaded();
+			 		}
+			 	},
+			 	error: onError
+			});
+
+			$.ajax({
+			 	url:"third-party-libs/uglify.js", 
+			 	dataType: 'script',
+			 	cache: true,
+			 	success: function(data) {
+			 		loadedScripts[1] = data;
+			 		if(loadedScripts[0]) {
+			 			onScriptsLoaded();
+			 		}
+			 	},
+			 	error: onError
+			});
+
+		});
+		/* build tool END */
+
+
+
+
+
+
+		/**
+		 * Popup with source code for each example
+		 */
+		var example,
+		      getCode,
+		      CSS,
+		      JS,
+		      HTML,
+		      highlighterLoaded;
+
+		  var formatCode = function (str) {
+		      if(str) {
+		        // replace special chars
+		        str = str.replace(/[&<>"']/g, function($0) {
+		            return "&" + {"&":"amp", "<":"lt", ">":"gt", '"':"quot", "'":"#39"}[$0] + ";";
+		        });
+		        
+		        // remove spaces from each line based on spaces on first line
+		        var firstLineLength = str.match(/^(\s*)/)[1].length;
+		        var regExp = new RegExp('^ {' + (firstLineLength-1) + '}', "gm");
+		        str = str.replace(regExp, '');
+
+		        // replace spaces with tabs
+		        str = str.replace(/  /g,'\t');
+
+		        str = $.trim(str);
+		      }
+		      return str;
+		    };
+
+		  var highlight = function() {
+		    hljs.highlightBlock(JS.find('code')[0]);
+
+		    if(CSS)
+		      hljs.highlightBlock(CSS.find('code')[0]);
+
+		    if(HTML)
+		      hljs.highlightBlock(HTML.find('code')[0]);
+		  };
+
+		$('.example').each(function() {
+		    $(this).find('h3').click(function() {
+				var example = $(this).parent('.example');
+				var getCodeWindow = $('<div class="get-code-window"><h1>'+example.find('h3').text()+'</h1></div>');
+				JS = $('<div class="highlight"><pre><code class="javascript">'+formatCode(example.find('script').eq(0).html())+'</code></pre></div>');
+
+				CSS = example.find('style');
+				if(CSS.length) {
+					CSS = $('<div class="highlight"><pre><code class="css">'+formatCode(CSS.html())+'</code></pre></div>');
+				} else {
+					CSS = '';
+				}
+
+				HTML = example.find('.html-code');
+				if(HTML.length) {
+					HTML = $('<div class="highlight"><pre><code class="xml html">'+formatCode(HTML.html())+'</code></pre></div>');
+				} else {
+					HTML = '';
+				}
+
+				if(!highlighterLoaded) {
+					highlighterLoaded = true;
+					var script = document.createElement("script"),
+						$script = $(script);
+						script.src = 'http://yandex.st/highlightjs/7.3/highlight.min.js';
+					if(window.jQuery) {
+						$.getScript(script.src , function() {
+							highlight();
+						});
+					} else {
+						$(script).appendTo("head").on("load", function() {
+							highlight();
+						});
+					}
+				} else {
+					highlight();
+				}
+
+				getCodeWindow.append(JS);
+				getCodeWindow.append(HTML);
+				getCodeWindow.append(CSS);
+
+				getCodeWindow.append('<p>Code above is dynamically generated directly from the source of this example.<br/>Please read <a href="documentation.html">the documentation</a> before using it.</p>');
+
+				$.magnificPopup.open({
+					items: {
+						src: getCodeWindow,
+						type: 'inline'
+					}
+				});
+
+		});
+
+	});
+});
+</script>
+
+  
+
+  
+  
+</body></html>

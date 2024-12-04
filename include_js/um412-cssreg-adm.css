@@ -1,0 +1,306 @@
+body{
+	 background:#fff;
+	 color:#000;
+}
+ .maincontent,
+ #maincontent {
+	 background:#fff;
+	 	min-height:510px;
+		float:none;
+		padding:35px 5px 15px 5px;
+		margin:0px auto;
+ }
+.comment1 {
+    background: #ffe;
+	color:#000;
+    border: 2px solid #000;
+    padding: 20px;
+    text-align: left;
+    margin: 3px;
+	border:1px solid #770;
+}
+ .ui-widget-content {
+    color: #000;
+	background:#fff;
+}
+ #wrapper {
+	width:100%;
+	z-index:0;
+	margin: 10px 0px 0px 0px;
+	border-radius:0px;
+	box-shadow:none;
+}
+#content { width:100%; }
+#footer { width:100%; }
+#content_bottom  { width:99%; }
+#tnama {
+	top:450px;
+}
+.tbreport {
+	width:100%;
+}
+#tmenuatas,
+#mnuAdmin,
+#menuk2{
+	position:fixed;
+	
+	}
+#mnuAdmin {
+	width:100%;
+	top:0px;
+	z-index:2000;
+	border:2px;
+	padding:5px;
+	font-size:13px;
+	height:20px;
+	background:#667;
+	color:#FFF;
+	}
+#tmenuatas {
+	z-index:2001;
+	
+}
+
+#mnuAdmin a{
+	color:#FFF;
+	}
+#menuk2{
+	position:fixed;
+	top:25px;
+	margin:0px 0px 0px -10px; 
+	border:1px #fff solid;
+	padding:5px; ;
+	background:#CFF;display:none;
+}
+.userlogout {
+	margin-right:5px;
+	}
+	
+
+
+.frmreport,
+.maincontent td,
+.tbreport .troddform2 td, 
+.tbreport .trevenform2 td,
+.tbreport td {
+	font-size:12px  !important; 
+	padding:2px !important;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+   min-height: auto;
+   width:auto;
+   height:auto;
+   margin-bottom:5px;
+}
+
+select {
+	max-width:220px;
+}
+
+.tbxls {
+	text-align: center;
+	margin-bottom: 10px;
+}
+.tbxls,
+.tbxls .btn {
+	font-size:12px;
+	
+}
+
+.titlereport {
+	margin: 10px 0 10px 0;
+}
+
+/*menu*/
+
+/* navatas::base */
+{
+	position:fixed;
+	top:0px;
+	padding:7px 0 7px 0;
+}
+
+div#navatas ul {
+	margin: -5px 0 0 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	z-index:10000;
+}
+div#navatas ul.navatas {
+	padding-left: 10px;
+}
+
+div#navatas li {
+	position: relative;
+	z-index: 20009;
+	margin: 0;
+	padding: 0 5px 0 0;
+	display: block;
+	float: left;
+}
+
+
+div#navatas li:hover>ul {
+	left: -2px;
+}
+
+div#navatas a {
+	position: relative;
+	z-index: 20010;
+	height: 21px;
+	display: block;
+	float: left;
+	line-height: 21px;
+	text-decoration: none;
+	font: normal 14px Trebuchet MS;
+}
+
+div#navatas a:hover {
+	border-bottom:#036 2px solid;
+	background:#668;
+	}
+
+div#navatas ul ul a:hover span,
+div#navatas ul li ul li a:hover
+{ 
+	color:#fff; 
+	background:#036; 
+	}
+div#navatas li.current a {}
+
+div#navatas span {
+	display: block;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: 95% 0;
+}
+div#navatas ul ul a.parent span {
+	background-position:95% 8px;
+}
+
+/* navatas::level1 */
+div#navatas a {
+	padding: 0 10px 0 10px;
+	color:#036;
+}
+div#navatas span {
+	margin-top: 0px;
+}/**@replace#1*/
+
+/*
+div#navatas li { background: url(<?=$toroot?>images/main-delimiter.png) 98% 4px no-repeat; heigh:30px}*/
+div#navatas li.last { background: none; }
+
+/* navatas::level2 */
+div#navatas ul ul li { 
+	z-index:10001;
+	
+}
+
+div#navatas ul li ul { 
+	background: #fff; 
+	z-index:10001;
+	
+}
+
+div#navatas ul ul {
+	position: absolute;
+	top: 20px;
+	width:320px;
+	left: -999em;
+	background:#FFF;
+	padding: 5px 0 0 -10px;
+	margin-top:7px;
+	border:#030 1px solid;
+}
+/*   width: 163px;
+	 background: rgb(45,45,45);*/
+div#navatas ul li a {
+	color:#FFF;
+}
+div#navatas ul ul a {
+	padding: 0;
+	color:#036;
+	height: auto;
+	float: none;
+	display: block;
+	line-height: 24px;
+}
+/*    color: rgb(169,169,169); */
+div#navatas ul ul span {
+	margin-top: 0;
+	padding-right: 15px;
+	_padding-right: 20px;
+	color:#036;
+	text-align:left;
+	padding-left:3px;
+}
+/*     color: rgb(169,169,169);*/
+div#navatas ul ul li.last { background: none; }
+div#navatas ul ul li {
+	width: 100%;
+}
+
+/* navatas::level3 */
+div#navatas ul ul ul {
+	padding: 0;
+	margin: -38px 0 0 222px !important;
+	margin-left:172px;
+}
+
+div#navatas ul ul ul li {
+	background:#F00;
+}
+
+/* colors */
+div#navatas ul ul ul { background:#036}
+div#navatas ul ul ul ul { background: #036; }
+
+
+/* lava lamp */
+div#navatas li.back {
+	width: 13px;		
+	height: 44px;
+	z-index: 20008;
+	position: absolute;
+	margin: -1px 0 0 -5px;
+}
+div#navatas li.back .left {
+	height: 44px;
+	margin-right: 8px;
+}	
+
+.ma_firstletter {
+	padding:3px 1px;
+	font-weight:bold;
+	color:#e1e1e1;
+	display:none;
+}
+	
+div#navatas>ul>li {
+	padding:10px;
+}
+
+@media (min-width:10px) and  (max-width:480px) {
+
+	div#navatas>ul>li {
+		max-width:10px; 
+	}
+	div#navatas>ul>li>a {
+		max-width:5px;
+		overflow:hidden;
+	}
+	.ma_firstletter {
+		display:block;
+		width: 15px;
+		padding: 3px 7px;
+		margin-left: -7px;
+		margin-bottom: 4px;
+	}
+	.ma_nextletter {
+		display:none;
+	}
+} 
+
+/*menu akhir*/ 

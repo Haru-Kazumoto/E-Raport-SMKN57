@@ -1,0 +1,5 @@
+catatan update
+
+2020-22-21
+*penambahan field deskripsi khusus kelas inklusif
+*file terkait :input,updatedb.php,inputkkm2,inputkkm2-form,conf2,raport2-mid-portrait,raport2-mid0-portrait

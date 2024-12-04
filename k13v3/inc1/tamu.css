@@ -1,0 +1,22 @@
+.tamu_komentar{
+	font-style:italic;
+	padding-left:6px;
+	}
+.tamu_tabel{
+	border:#999 1pt solid;
+	padding:6px;
+	text-align:center;
+	width:760px;
+  
+	}
+.tamu_reply{
+	font-style:italic;
+	padding-left:6px;
+	margin-left:20px; 
+	}
+.tamu_foto {
+	padding:6px;
+	
+	}
+	
+ 

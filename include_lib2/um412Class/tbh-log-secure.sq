@@ -1,0 +1,45 @@
+CREATE TABLE `tbh_logclick` (
+  `id` int(11) NOT NULL,
+  `vurl` varchar(200) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `vuid` varchar(20) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `tglclick` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `mark` varchar(15) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ip` varchar(20) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `ket` text CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+ 
+ALTER TABLE `tbh_logclick`  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `tbh_logclick` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ 
+CREATE TABLE `tbh_logh2` (
+  `id` mediumint(9) NOT NULL,
+  `tgl` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user` varchar(30) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ket` text NOT NULL,
+  `created_by` varchar(30) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `modified_by` varchar(30) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `idtrans` varchar(20) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `jenislog` varchar(20) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ip` varchar(15) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+ 
+ALTER TABLE `tbh_logh2`  ADD PRIMARY KEY (`id`); 
+ALTER TABLE `tbh_logh2`  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  
+ALTER TABLE `tbh_logip` CHANGE `svuid` `svuid` TEXT CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '', CHANGE `jlhip` `jlhip` INT(5) NOT NULL DEFAULT '0';
+ALTER TABLE `tbh_logclick` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT, CHANGE `tglclick` `tglclick` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `ket` `ket` TEXT CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '';  
+
+CREATE TABLE `tbh_logip` (
+  `id` int(11) NOT NULL,
+  `ip` varchar(17) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `svuid` text CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `jlhip` int(5) NOT NULL,
+  `ket` varchar(60) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `mark` varchar(20) NOT NULL DEFAULT '',
+  `tgl` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+ALTER TABLE `tbh_logip`  ADD PRIMARY KEY (`id`),  ADD UNIQUE KEY `ip` (`ip`); 
+ALTER TABLE `tbh_logip`  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
